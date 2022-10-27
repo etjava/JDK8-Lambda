@@ -115,5 +115,47 @@ Cal6 c6 = (a,b)->{
 int res4 = c6.test(0, 0);
 System.out.println(res4);
 ```
+# Lambda 方法引用
+## 当同一个方法(接口中的抽象方法)被多次调用时 可以封装成通用方法
+### 封装成通用方法的前提是方法的业务逻辑必须相同(业务逻辑不同不能使用通用方法，没有封装的意义)
+
+## 语法：
+### 对象::方法  
+### 如果是静态方法  类名::方法
+```
+@FunctionalInterface
+interface Cal7{
+  int test(int a);
+}
+// 直接调用方法1
+Cal7 c = a -> a+3; // 相当于 (a)->{return a+3;};
+System.out.println(c.test(3));
+// 直接调用方法2
+Cal7 c = a -> a+3; // 相当于 (a)->{return a+3;};
+System.out.println(c.test(3));
+
+// 将接口中的test方法封装成通用方法 因为他们的业务逻辑都是返回a+3的结果
+int testA(int a) {
+  return a+3;
+}
+// 调用通用方法
+lambda3 l = new lambda3();
+Cal7 c2 = l::testA;
+Cal7 c3 = l::testA;
+Cal7 c4 = l::testA;
+c2.test(10);
+
+// 封装成静态方法
+static int testC(int j) {
+  return j+3;
+}
+// lambda调用静态方法
+Cal7 c5 = lambda3::testC;
+Cal7 c6 = lambda3::testC;
+Cal7 c7 = lambda3::testC;
+c7.test(9);
+
+
+```
 
 
