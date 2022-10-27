@@ -40,7 +40,8 @@ interface Cal{
 
 # Lambda表达式 - 使用场景
 **Lambda表达式是面向接口编程的，那么在接口中的方法会存在如下特点**<br>
-**无返回值并且无参数**<br>
+#### 无返回值无参数，无返回值有参数(1个或多个参数) ，有返回值无参数 ，有返回值(1个或多个参数)
+**无返回值无参数**<br>
 ```
 @FunctionalInterface
 interface Cal1{
@@ -52,7 +53,7 @@ Cal1 c1 = ()->{
 };
 c1.test();
 ```
-**无返回值并且有一个参数**<br>
+**无返回值有一个参数**<br>
 ```
 @FunctionalInterface
 interface Cal2{
@@ -64,7 +65,7 @@ Cal2 c2 = (str)->{
 };
 c2.test("ETJAVA");
 ```
-**无返回值并且有多个参数**<br>
+**无返回值有多个参数**<br>
 ```
 @FunctionalInterface
 interface Cal3{
