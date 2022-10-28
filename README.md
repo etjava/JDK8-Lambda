@@ -321,3 +321,6 @@ public static boolean empty2() {
 }
 
 ```
+# 在Java.util.function包下提供了内置的函数式接口(8.0 有44个)
+![image](https://user-images.githubusercontent.com/47961027/198451866-5d8acc5f-4f77-47e3-a291-3e975cc33a84.png)
+
